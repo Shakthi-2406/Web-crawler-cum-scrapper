@@ -17,7 +17,7 @@ while requests.get(f'https://www.coursef.com/course?page={paginator}').text: #wi
             course_link_val = link.get('href')
             course_title_source = requests.get(course_link_val).text
             soup1 = BeautifulSoup(course_title_source, 'lxml')
-            course_link = course_link_val.encode("utf-8").decode()
+            course_link = course_link_val
             sample_title = "No Title"
             try:
                 title = soup1.find('h1').text.encode("utf-8").decode()
